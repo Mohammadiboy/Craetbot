@@ -1,0 +1,43 @@
+#اولین اپن کننده @Alfred_s1 و @DevOscar
+#تنها فقط این دو اوپن ککنده هستن به هیچ وجه ادیت نکنید
+
+#اپن شده در چنل = https://t.me/Virtualservices_3
+
+#کیر تو رحم ننه هرکی بدون منبع بزنه مخصوصا اولین اپن کننده و آیدی چنل
+
+echo "Installing PHP 7.4 ..."
+
+sudo apt-get update && sudo apt -y install software-properties-common && sudo add-apt-repository ppa:ondrej/php && sudo apt-get update && sudo apt -y install php7.4
+sleep 10;
+
+echo "Installing Python 3.8 ..."
+
+sudo apt update && sudo apt install software-properties-common && sudo add-apt-repository ppa:deadsnakes/ppa && sudo apt install python3.8 && apt install python3-pip
+sleep 10;
+
+echo "Installing Phpmyadmin ..."
+
+sudo apt update && sudo apt install phpmyadmin php7.4-mbstring php7.4-zip php7.4-gd php7.4-json php7.4-curl php7.4-mysql && sudo apt-get install mysql-server && sudo phpenmod mbstring
+sleep 10;
+
+echo "Config Mysql ..."
+
+echo "- Enter your password for root :"
+read password
+
+mysql --user="root" --password="$password" --execute="ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$password';"
+
+echo "Config Phpmyadmin ..."
+
+echo "Include /etc/phpmyadmin/apache.conf"  >> /etc/apache2/apache2.conf
+
+sudo systemctl restart apache2.service
+
+echo "All Jobs Done!"
+
+#اولین اپن کننده @Alfred_s1 و @DevOscar
+#تنها فقط این دو اوپن ککنده هستن به هیچ وجه ادیت نکنید
+
+#اپن شده در چنل = https://t.me/Virtualservices_3
+
+#کیر تو رحم ننه هرکی بدون منبع بزنه مخصوصا اولین اپن کننده و آیدی چنل
